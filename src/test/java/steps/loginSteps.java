@@ -6,24 +6,35 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.loginPage;
+import pages.modifPage;
 public class loginSteps {
 	WebDriver driver;
 	loginPage login;
-	@Given("user is on login page")
-	public void user_is_on_login_page() throws InterruptedException{ 
-		System.out.println("inside Step-user is on login page");
-		
+	modifPage modif;
+	@Before
+	public void browserSetup() {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver.exe");
+		
 		driver=new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+	}
+	@After
+	public void tearDown() {
+		driver.close();
+		driver.quit();
+	}
+	@Given("user is on login page")
+	public void user_is_on_login_page() throws InterruptedException{ 
+		System.out.println("inside Step-user is on login page");
 		driver.get("https://www.exist.com.tn/");
-	   
 		Thread.sleep(5000);
 		driver.findElement(By.xpath("//div[@id='_desktop_user_info']/div")).click();
 		driver.findElement(By.xpath("//span[@class='hidden-md-down']")).click();
