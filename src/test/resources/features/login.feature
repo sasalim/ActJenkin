@@ -6,19 +6,13 @@ Feature: to test login functionality
 
     Given user is on login page
     When user enters <username> and <password>
-    And  clicks on login button
-<<<<<<< HEAD
-  
-=======
-    
->>>>>>> 1ba38578a5d85b565c19dc2412b1e76529e9270b
+    And clicks on login button
 
     Examples: 
-      | username                | password    |
-      | salimsaafi89@gmail.com  | kelibia2023 |
-      
-      
-    @tag2
+      | username               | password    |
+      | salimsaafi89@gmail.com | kelibia2023 |
+
+  @tag2
   Scenario Outline: Check login is failed with invalid credentials
     Check login is failed with invalid credentials
 
@@ -28,6 +22,5 @@ Feature: to test login functionality
     Then error message
 
     Examples: 
-      | username                 | password   |
-      | salimsaafi89@gmail.com   | kelibia    |
-      
+      | username               | password |
+      | salimsaafi89@gmail.com | kelibia  |
