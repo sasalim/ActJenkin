@@ -1,7 +1,6 @@
 @tag
 Feature: to test modification  functionality
 
-  @tag2
   Scenario Outline: modification of user name
     Given is navigated to the home page
     When clicks on information button
