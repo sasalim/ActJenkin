@@ -7,7 +7,11 @@ Feature: to test login functionality
     Given user is on login page
     When user enters <username> and <password>
     And  clicks on login button
+<<<<<<< HEAD
   
+=======
+    
+>>>>>>> 1ba38578a5d85b565c19dc2412b1e76529e9270b
 
     Examples: 
       | username                | password    |
